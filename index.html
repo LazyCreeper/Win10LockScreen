@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Language" content="zh-CN" />
+	<meta name="renderer" content="webkit" />
+	<meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no" />
+	<title>Login</title>
+	<link href="./css/bootstrap.min.css" rel="stylesheet">
+	<link href="./css/style.css" rel="stylesheet">
+	<!--[if lt IE 9]>
+        <div id='Not_' class="show-ui" style="height: 40px;background-color: rgb(221,79,67);text-align:center;line-height: 40px;color: white;">
+            <b>无法访问! 您的浏览器版本过低或是兼容模式,请使用最新/更高版本的浏览器: IE10+ chrome FireFox 等，如果是国内浏览器请打开极速浏览模式（webkit内核）。</b>
+        </div>
+    <![endif]-->
+</head>
+
+<body>
+	<div id='lock-bg' >
+		<h1 id="time">Loading...</h1>
+		<h2 id="date">Just a moment...</h2>
+		<h3 class="awa">按下 Alt 解锁</h3>
+	</div>
+	<div id='view-bg' ></div>
+	<div id="view-page">
+		<div id="panel-login" style="display: none;">
+			<div id="panel-title">
+				<!-- <img src="./img/user.png"> -->
+				<img src="https://thiscatdoesnotexist.com/">
+				<p style="color: #fff;">Administrator</p>
+			</div>
+			<div id="panel-context">
+				<input type="password" class="minput" onkeypress="enKeyPress()" placeholder="密码">
+				<button class="mbutton">→</button>
+                <div id="copyright" class="">
+					<a class="wdnmda" onclick="alert('那就让她忘记吧！')">忘记密码?</a>
+					<span onclick="window.open('https://lazy.ink')">©2021 Lazy. All rights reserved.</span>
+		        </div>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="./js/jq.min.js"></script>
+<script type="text/javascript">
+	function enKeyPress() {
+		if (event.keyCode == 13) {
+			//登录
+		}
+	}
+	function addZero(i){
+		if (i<10) {
+			i="0" + i;
+		}
+		return i;
+	}
+	function addRi(r){
+		if (r="0") {
+			r="日";
+		}else if(r="1") {
+			r="一";
+		}else if(r="2") {
+			r="二";
+		}else if(r="3") {
+			r="三";
+		}else if(r="4") {
+			r="四";
+		}else if(r="5") {
+			r="五";
+		}else if(r="6") {
+			r="六";
+		}
+		return r;
+	}
+	function current() {
+		var d = new Date(),
+		str = '';
+		str += addZero(d.getHours()) + ':';
+		str += addZero(d.getMinutes()) + '<br>';
+		return str;
+	}
+	function current2() {
+		var d = new Date(),
+		str2 = '';
+		str2 += d.getMonth() + 1 + '月'; 
+		str2 += d.getDate() + '日，星期';
+		str2 += addRi(d.getDay());
+		return str2;
+	}
+	window.onload = function() {
+		var time = document.getElementById("time");
+		var date = document.getElementById("date");
+		time.innerHTML = current();
+		date.innerHTML = current2();
+		$("body").keydown(function(){
+			if (event.keyCode == 18) {
+				$("#lock-bg").animate({opacity:'toggle'});
+				$("#panel-login").animate({opacity:'toggle'},'slow');	
+			}
+		});
+	}
+	$("#lock-bg").click(function(){
+		//$("#lock-bg").slideToggle(600);
+		$("#lock-bg").animate({opacity:'toggle'});
+		$("#panel-login").animate({opacity:'toggle'},'slow');
+	});
+	
+</script>
+</html>

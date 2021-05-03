@@ -1,0 +1,252 @@
+/*
+
+ @Name: Html仿Win10登录页面模板
+ @Last Date: 2021.5.2
+ @Create Date: 2021.5.1
+ @Author: Lazy
+ @WebSite: https://blog.imlazy.ink:233/index.php/archives/204/
+ 
+*/
+html,
+body {
+	margin: 0;
+	height: 100%;
+	font-family: "等线","微软雅黑", "幼圆", "microsoft yahei";
+}
+
+li,
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+span,
+input {
+	-webkit-text-stroke-width: 0.2px;
+	stroke-width: 0.2px;
+}
+
+a:link {
+	text-decoration: none;
+}
+
+a:visited {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+a:active {
+	text-decoration: none;
+}
+
+/* 全局Css结束 */
+#lock-bg {
+	z-index: 999;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	/* min-height: 475px; */
+	background:linear-gradient(135deg, rgb(0 0 0 / 30%) 0%, rgb(0 0 0 / 30%) 100%),url(https://i.zerodream.net/b7797e84608b9ed228aa58c7d51a7c1a.png);
+	background-size:cover;
+	font-family:"等线","黑体",Microsoft YaHei;
+	user-select: none;
+}
+
+#time {
+	position: absolute;
+    bottom: 1.2em;
+    font-size: 8em;
+    left: 50px;
+    color: #eaeaea;
+    font-weight: 100;
+}
+
+#date {
+	position: absolute;
+    bottom: 1.8em;
+    font-size: 3.5em;
+    left: 50px;
+    color: #eaeaea;
+    font-weight: 200;
+}
+
+.awa {
+	position: absolute;
+    bottom: 1.3em;
+    font-size: 2.4em;
+    left: 50px;
+    color: #eaeaea;
+    font-weight: 200;
+}
+
+#view-bg {
+	z-index: -3;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	min-height: 475px;
+	background:url(https://i.zerodream.net/b7797e84608b9ed228aa58c7d51a7c1a.png);
+	background-size:cover;
+}
+
+/* 
+#view-bg-back {
+	/* z-index: -2;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	min-height: 475px;
+	background-color: black;
+	opacity: 0.4; */
+
+/* } */
+
+#view-page {
+	background-color: unset;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	min-height: 420px;
+	backdrop-filter: blur(10px);
+}
+
+#panel-login {
+	height: 364px;
+	width: 412px;
+	padding: 32px;
+	display: flex;
+	flex-direction: column;
+	justify-content: left;
+	align-items: flex-start; 
+	align-items: stretch;
+}
+
+#panel-title {
+	text-align: center;
+	color:#fffff;
+	font-size: 3em;
+    font-family: 等线;
+}
+
+#panel-title img {
+	margin-top: -2em;
+    max-width: 200px;
+    border: none;
+    border-radius: 50%;
+}
+
+#mptit {
+	font-size: 24px;
+	font-weight: 500;
+}
+
+.minput {
+	background: rgba(0,0,0,0.5);
+	color: #fff;
+	width: 89%;
+	padding: 6px 10px;
+	height: 36px;
+	outline: none;
+	border: solid 2px #9c9c9c;
+	-webkit-appearance: textfield;
+	letter-spacing: normal;
+	word-spacing: normal;
+	text-indent: 0px;
+	margin-bottom: 16px;
+	font-weight: 100;
+}
+
+.minput:hover {
+	background: rgba(0,0,0,0.7);
+    border: 2px solid #fff;
+    transition: all 0.3s;
+}
+
+.minput:focus {
+	color: #3a3a3a;
+    background: rgb(255,255,255,0.9);
+    border: solid 2px #bdbdbd;
+    transition: all 0.3s;
+}
+
+#panel-context {
+	display: inline-block;
+	flex-direction: column;
+	ustify-content: left;
+	align-items: flex-start;
+}
+
+.mbutton {
+    background-color: rgba(112,128,144,0.8);
+	color: #F5F5F5;
+	width: 11%;
+	height: 36px;
+	border: 2px solid #95989c;
+	margin-left: -7px;
+	transition: all 0.5s;
+}
+
+.mbutton:focus {
+	border: 3px solid #465975;
+    background: #3b4b63;
+    border-radius: 0;
+    outline: 0;
+}
+
+#copyright {
+	margin-top: 4px;
+	font-size: 10px;
+	color: rgb(255, 199, 216);
+	text-align: center;
+}
+
+.wdnmda {
+	display:block;
+	color: #aaa;
+}
+
+.wdnmda:hover {
+	color:#cecbcb;
+	transition: all 0.5s;
+	cursor: pointer;
+}
+
+/* phone page */
+
+@media (max-width: 560px) {
+	.phone-none {
+		display: none;
+	}
+	#panel-login {
+		width: 100%;
+		height: 100%;
+		margin-top: 20%;
+	}
+	#view-bg {
+		z-index: -3;
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		min-height: 475px;
+		background-color:rgba(158,158,158,0.76);
+		background:url(../img/pbg.jpg);
+		background-size:cover;
+	}
+	#lock-bg {
+		z-index: 99;
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		background-color:rgba(158,158,158,0.76);
+		background:url(../img/pbg.jpg);
+		background-size:cover;
+	}
+}
