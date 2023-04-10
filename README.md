@@ -32,4 +32,4 @@ html 仿 Win10 锁屏开机登录界面<br/>
 [3]: https://s1.imlazy.ink:233/img/2021/05/02/a110186c703c920210502.jpg
 [2]: https://github.com/MCSManager/MCSManager/tree/v8.7.0
 [4]: https://s1.imlazy.ink:233/img/2021/05/02/427cb79b4596720210502.jpg
-[5]: https://mcsm.lanzous.com/b010f5ogh
+[5]: https://mcsm.lanzoui.com/b010f5ogh
