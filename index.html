@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
@@ -18,26 +19,26 @@
 </head>
 
 <body>
-	<div id='lock-bg' >
+	<div id='lock-bg'>
 		<h1 id="time">Loading...</h1>
 		<h2 id="date">Just a moment...</h2>
 		<h3 class="awa">按下 Alt 解锁</h3>
 	</div>
-	<div id='view-bg' ></div>
+	<div id='view-bg'></div>
 	<div id="view-page">
 		<div id="panel-login" style="display: none;">
 			<div id="panel-title">
 				<!-- <img src="./img/user.png"> -->
-				<img src="https://thiscatdoesnotexist.com/">
+				<img src="https://api.imlazy.ink/img-phone/">
 				<p style="color: #fff;">Administrator</p>
 			</div>
 			<div id="panel-context">
 				<input type="password" class="minput" onkeypress="enKeyPress()" placeholder="密码">
 				<button class="mbutton">→</button>
-                <div id="copyright" class="">
+				<div id="copyright" class="">
 					<a class="wdnmda" onclick="alert('那就让她忘记吧！')">忘记密码?</a>
-					<span onclick="window.open('https://lazy.ink')">©2021 Lazy. All rights reserved.</span>
-		        </div>
+					<span onclick="window.open('https://lazy.ink')">© <year>2023</year> Lazy. All rights reserved.</span>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -49,62 +50,29 @@
 			//登录
 		}
 	}
-	function addZero(i){
-		if (i<10) {
-			i="0" + i;
-		}
-		return i;
-	}
-	function addRi(r){
-		if (r="0") {
-			r="日";
-		}else if(r="1") {
-			r="一";
-		}else if(r="2") {
-			r="二";
-		}else if(r="3") {
-			r="三";
-		}else if(r="4") {
-			r="四";
-		}else if(r="5") {
-			r="五";
-		}else if(r="6") {
-			r="六";
-		}
-		return r;
-	}
-	function current() {
-		var d = new Date(),
-		str = '';
-		str += addZero(d.getHours()) + ':';
-		str += addZero(d.getMinutes()) + '<br>';
-		return str;
-	}
-	function current2() {
-		var d = new Date(),
-		str2 = '';
-		str2 += d.getMonth() + 1 + '月'; 
-		str2 += d.getDate() + '日，星期';
-		str2 += addRi(d.getDay());
-		return str2;
-	}
-	window.onload = function() {
-		var time = document.getElementById("time");
-		var date = document.getElementById("date");
-		time.innerHTML = current();
-		date.innerHTML = current2();
-		$("body").keydown(function(){
+	$(function () {
+		setInterval(() => {
+			let date = new Date()
+			const weekDay = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'][date.getDay()];
+			$("#time").html(`${date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`)
+			$("#date").html(`${date.getMonth() + 1}月${date.getDate()}日，${weekDay}`)
+		}, 1000)
+
+		$('year').html(`${new Date().getFullYear()}`)
+
+		$("#lock-bg").click(function () {
+			//$("#lock-bg").slideToggle(600);
+			$("#lock-bg").animate({ opacity: 'toggle' });
+			$("#panel-login").animate({ opacity: 'toggle' }, 'slow');
+		});
+
+		$("body").keydown(function () {
 			if (event.keyCode == 18) {
-				$("#lock-bg").animate({opacity:'toggle'});
-				$("#panel-login").animate({opacity:'toggle'},'slow');	
+				$("#lock-bg").animate({ opacity: 'toggle' });
+				$("#panel-login").animate({ opacity: 'toggle' }, 'slow');
 			}
 		});
-	}
-	$("#lock-bg").click(function(){
-		//$("#lock-bg").slideToggle(600);
-		$("#lock-bg").animate({opacity:'toggle'});
-		$("#panel-login").animate({opacity:'toggle'},'slow');
-	});
-	
+	})
 </script>
+
 </html>
