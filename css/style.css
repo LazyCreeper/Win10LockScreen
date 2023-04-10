@@ -1,7 +1,7 @@
 /*
 
  @Name: Html仿Win10登录页面模板
- @Last Date: 2021.5.2
+ @Last Date: 2023.4.10
  @Create Date: 2021.5.1
  @Author: Lazy
  @WebSite: https://blog.imlazy.ink:233/index.php/archives/204/
@@ -11,7 +11,8 @@ html,
 body {
 	margin: 0;
 	height: 100%;
-	font-family: "等线","微软雅黑", "幼圆", "microsoft yahei";
+	font-family: "等线", "微软雅黑", "幼圆", "microsoft yahei";
+	background-color: #000;
 }
 
 li,
@@ -43,54 +44,53 @@ a:active {
 	text-decoration: none;
 }
 
-/* 全局Css结束 */
 #lock-bg {
 	z-index: 999;
 	width: 100%;
 	height: 100%;
 	position: fixed;
 	/* min-height: 475px; */
-	background:linear-gradient(135deg, rgb(0 0 0 / 30%) 0%, rgb(0 0 0 / 30%) 100%),url(https://i.zerodream.net/b7797e84608b9ed228aa58c7d51a7c1a.png);
-	background-size:cover;
-	font-family:"等线","黑体",Microsoft YaHei;
+	background: linear-gradient(135deg, rgb(0 0 0 / 30%) 0%, rgb(0 0 0 / 30%) 100%), url(https://i.zerodream.net/b7797e84608b9ed228aa58c7d51a7c1a.png);
+	background-size: cover;
+	font-family: "等线", "黑体", Microsoft YaHei;
 	user-select: none;
 }
 
 #time {
 	position: absolute;
-    bottom: 1.2em;
-    font-size: 8em;
-    left: 50px;
-    color: #eaeaea;
-    font-weight: 100;
+	bottom: 1.2em;
+	font-size: 8em;
+	left: 50px;
+	color: #eaeaea;
+	font-weight: 100;
 }
 
 #date {
 	position: absolute;
-    bottom: 1.8em;
-    font-size: 3.5em;
-    left: 50px;
-    color: #eaeaea;
-    font-weight: 200;
+	bottom: 1.8em;
+	font-size: 3.5em;
+	left: 50px;
+	color: #eaeaea;
+	font-weight: 200;
 }
 
 .awa {
 	position: absolute;
-    bottom: 1.3em;
-    font-size: 2.4em;
-    left: 50px;
-    color: #eaeaea;
-    font-weight: 200;
+	bottom: 1.3em;
+	font-size: 2.4em;
+	left: 50px;
+	color: #eaeaea;
+	font-weight: 200;
 }
 
 #view-bg {
-	z-index: -3;
+	z-index: 0;
 	width: 100%;
 	height: 100%;
 	position: fixed;
 	min-height: 475px;
-	background:url(https://i.zerodream.net/b7797e84608b9ed228aa58c7d51a7c1a.png);
-	background-size:cover;
+	background: url(https://i.zerodream.net/b7797e84608b9ed228aa58c7d51a7c1a.png);
+	background-size: cover;
 }
 
 /* 
@@ -125,22 +125,25 @@ a:active {
 	display: flex;
 	flex-direction: column;
 	justify-content: left;
-	align-items: flex-start; 
+	align-items: flex-start;
 	align-items: stretch;
 }
 
 #panel-title {
 	text-align: center;
-	color:#fffff;
+	color: #ffffff;
 	font-size: 3em;
-    font-family: 等线;
+	font-family: 等线;
 }
 
 #panel-title img {
 	margin-top: -2em;
-    max-width: 200px;
-    border: none;
-    border-radius: 50%;
+	width: 200px;
+	border: none;
+	border-radius: 50%;
+	height: 200px;
+	object-fit: cover;
+	object-position: top;
 }
 
 #mptit {
@@ -149,7 +152,7 @@ a:active {
 }
 
 .minput {
-	background: rgba(0,0,0,0.5);
+	background: rgba(0, 0, 0, 0.5);
 	color: #fff;
 	width: 89%;
 	padding: 6px 10px;
@@ -165,16 +168,16 @@ a:active {
 }
 
 .minput:hover {
-	background: rgba(0,0,0,0.7);
-    border: 2px solid #fff;
-    transition: all 0.3s;
+	background: rgba(0, 0, 0, 0.7);
+	border: 2px solid #fff;
+	transition: all 0.3s;
 }
 
 .minput:focus {
 	color: #3a3a3a;
-    background: rgb(255,255,255,0.9);
-    border: solid 2px #bdbdbd;
-    transition: all 0.3s;
+	background: rgb(255, 255, 255, 0.9);
+	border: solid 2px #bdbdbd;
+	transition: all 0.3s;
 }
 
 #panel-context {
@@ -185,7 +188,7 @@ a:active {
 }
 
 .mbutton {
-    background-color: rgba(112,128,144,0.8);
+	background-color: rgba(112, 128, 144, 0.8);
 	color: #F5F5F5;
 	width: 11%;
 	height: 36px;
@@ -196,9 +199,9 @@ a:active {
 
 .mbutton:focus {
 	border: 3px solid #465975;
-    background: #3b4b63;
-    border-radius: 0;
-    outline: 0;
+	background: #3b4b63;
+	border-radius: 0;
+	outline: 0;
 }
 
 #copyright {
@@ -209,12 +212,12 @@ a:active {
 }
 
 .wdnmda {
-	display:block;
+	display: block;
 	color: #aaa;
 }
 
 .wdnmda:hover {
-	color:#cecbcb;
+	color: #cecbcb;
 	transition: all 0.5s;
 	cursor: pointer;
 }
@@ -225,28 +228,49 @@ a:active {
 	.phone-none {
 		display: none;
 	}
+
 	#panel-login {
 		width: 100%;
 		height: 100%;
 		margin-top: 20%;
 	}
+
+	#view-page {
+		padding-top: 30%;
+	}
+
 	#view-bg {
-		z-index: -3;
+		z-index: 0;
 		width: 100%;
 		height: 100%;
 		position: fixed;
 		min-height: 475px;
-		background-color:rgba(158,158,158,0.76);
-		background:url(../img/pbg.jpg);
-		background-size:cover;
+		background-color: rgba(158, 158, 158, 0.76);
+		background: url(../img/pbg.jpg);
+		background-size: cover;
 	}
+
 	#lock-bg {
 		z-index: 99;
 		width: 100%;
 		height: 100%;
 		position: fixed;
-		background-color:rgba(158,158,158,0.76);
-		background:url(../img/pbg.jpg);
-		background-size:cover;
+		background-color: rgba(158, 158, 158, 0.76);
+		background: url(../img/pbg.jpg);
+		background-size: cover;
+	}
+}
+
+@media (max-width: 420px) {
+	#time {
+		bottom: 1em;
+	}
+
+	#date {
+		font-size: 3em;
+	}
+
+	.awa {
+		bottom: 1em;
 	}
 }
